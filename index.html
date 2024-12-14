@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4b1afe75cc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Bubblique Laundry Service</title>
+    <link rel="icon" type="image/x-icon" href="img/laundry.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"> Bubblique</a>
+            <div class="nav-links">
+                <a href="about.html">About us</a>
+                <a href="howitworks.html">How it works</a>
+                <a href="pricing.html">Prices & Services</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Bringing Freshness to Your Doorstep.</h1>
+                <p>Fresh Laundry, No Hassle!</p>
+                <a href="booking.html" class="cta-button">Book Here!</a>
+            </div>
+            <div class="container-img">
+                <img src="img/logo.png" alt="">
+            </div>
+            <!-- <div class="bubble-container">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div> -->
+        </section>
+        <section class="about-content">
+            <div class="about-image">
+                <img src="img/services.png" alt="">
+            </div>
+            <div class="about-text">
+                <p>ABOUT US</p>
+                <h2>Welcome to Bubblique!</h2>
+                <p>We always ensure the quality of laundry and dry cleaning. Our fleet team are efficient enough to ensure your schedule collection and delivery.</p> <br>
+                <a href="about.html">Read More</a>
+            </div>
+            
+        </section>
+        <section id="services">
+            <p class="q">OUR SERVICES</p>
+            <h2>What We Offer</h2>
+            <div class="services-grid">
+                <a class="service-card" href="pricing.html">
+                    <img class="icon" src="img/fold.png" alt="Wash & Fold">
+                    <h3>Wash & Fold</h3>
+                    <p>Perfect for everyday laundry. Clean and folded clothes, ready to wear!</p>
+                </a>
+                <a class="service-card" href="pricing.html">
+                    <img class="icon" src="img/dry.png" alt="Dry Cleaning">
+                    <h3>Dry Cleaning</h3>
+                    <p>Professional dry cleaning for your delicate and formal wear.</p>
+                </a>
+                <a class="service-card" href="pricing.html">
+                    <img class="icon" src="img/truck.png" alt="Pickup & Delivery">
+                    <h3>Pickup & Delivery</h3>
+                    <p>Convenient pickup and delivery at your doorstep, saving you time and effort.</p>
+                </a>
+            </div>
+        </section>
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <p class="q">TESTIMONIALS</p>
+                <h2>What Our Customers Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Bubblique has made my life so much easier. Their eco-friendly approach aligns perfectly with my values!"</p>
+                        <p class="testimonial-author">- Sarah J.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The quality of service is outstanding. My clothes have never felt fresher!"</p>
+                        <p class="testimonial-author">- Mike T.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Convenient, reliable, and environmentally conscious. What more could you ask for?"</p>
+                        <p class="testimonial-author">- Emily R.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>CONTACT US</h2>
+            <p>If you have any concerns or suggestions about our business, just fill up the form below:</p>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: bubbliquelaundry@gmail.com</p>
+                    <p>Phone: +63 994 626 6442</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Address</h3>
+                    <p>Poblacion, Cordova, Cebu</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Menu</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="howitworks.html">How It Works</a>
+                    <a href="pricing.html">Prices</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bubblique. All rights reserved.</p>
+            </div>
+        </footer> 
+        <script>
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+    
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        document.addEventListener('DOMContentLoaded', () => {
+        const contactForm = document.getElementById('contactForm');
+        
+        // Listen for form submission
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get form fields
+            const nameField = contactForm.querySelector('input[type="text"]');
+            const emailField = contactForm.querySelector('input[type="email"]');
+            const messageField = contactForm.querySelector('textarea');
+
+            // Check for empty or spaces-only values
+            if (isInvalidInput(nameField.value)) {
+                showError("Name cannot be empty or contain only spaces.");
+                return;
+            }
+
+            if (isInvalidInput(emailField.value)) {
+                showError("Email cannot be empty or contain only spaces.");
+                return;
+            }
+
+            if (isInvalidInput(messageField.value)) {
+                showError("Message cannot be empty or contain only spaces.");
+                return;
+            }
+
+            // If all fields are valid, reset the form and show success alert
+            contactForm.reset();
+            showCreativeAlert("Submitted");
+        });
+
+        // Helper function to check if input is empty or contains only spaces
+        function isInvalidInput(value) {
+            return value.trim() === "";
+        }
+
+        // Function to display an error message
+        function showError(message) {
+            alert(message); // Simple error alert
+        }
+
+        // Function to display a creative success alert
+        function showCreativeAlert(message) {
+            const alertContainer = document.createElement('div');
+            alertContainer.style.position = 'fixed';
+            alertContainer.style.top = '50%';
+            alertContainer.style.left = '50%';
+            alertContainer.style.transform = 'translate(-50%, -50%)';
+            alertContainer.style.backgroundColor = '#28a745';
+            alertContainer.style.color = 'white';
+            alertContainer.style.padding = '1.5rem 3rem';
+            alertContainer.style.borderRadius = '10px';
+            alertContainer.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+            alertContainer.style.fontSize = '1.5rem';
+            alertContainer.style.zIndex = '1000';
+            alertContainer.style.textAlign = 'center';
+            alertContainer.style.animation = 'fadeInOut 3s ease';
+
+            alertContainer.textContent = message;
+            document.body.appendChild(alertContainer);
+
+            setTimeout(() => {
+                document.body.removeChild(alertContainer);
+            }, 3000);
+        }
+
+        });
+        </script>
+    </main>
+</body>
+</html>

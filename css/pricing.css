@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f0f5ff;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #068fff;
+    text-decoration: none;
+}
+.logo:hover {
+    color: #10169f;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 11px;
+}
+
+.nav-links a:hover {
+    background: #0a0b5c;
+    color: white;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: linear-gradient(#068fff, #007bff);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(#10169f, #0a0b5c);
+}
+
+.q {
+    text-align: center;
+    font-size: 15px;
+    color: #0a0b5c;
+}
+
+.hero {
+    background-color: #ceebff;
+    color: white;
+    text-align: center;
+    padding: 7rem 0 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: #0a0b5c;
+}
+.hero p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            gap: 1rem;
+            border-radius: 10px;
+        }
+        .nav-links a {
+            color: #0a0b5c;
+        }
+    
+        .nav-links.active {
+            display: flex;
+        }
+    
+        .menu-toggle {
+            display: block;
+        }
+        .menu-toggle a {
+            color: black;
+        }
+        }
+
+.features {
+    color: white;
+    padding: 1rem 4%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-icon {
+    background:#ceebff;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+span {
+    color:#10169f;
+}
+
+.services {
+    padding: 4rem 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+#services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #10169f;
+    margin-bottom: 3rem;
+}
+
+.icon {
+    height: 150px;
+    width: 150px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.service-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.service-description {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.service-details {
+    font-size: 0.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.price-label {
+    color: #333;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color:#068fff;
+}
+
+.price-unit {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+#soaps {
+    padding: 5rem 5%;
+    background-color: #f0f5ff;
+}
+
+.soap-grid {
+    padding: 4rem 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.soap-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.soap-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.soap-description {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.color-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.color-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.color-circle:hover {
+    transform: scale(1.2);
+    border: 2px solid #333;
+}
+
+#soaps h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #10169f;
+}
+
+.q {
+    text-align: center;
+    font-size: 15px;
+    color: #0a0b5c;
+}
+
+footer {
+    background-color: white;
+    color: black;
+    padding: 30px 70px 10px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 40px;
+    margin-top: 50px;
+}
+.footer-section a {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 7px;
+    text-decoration: none;
+    color: #0a0b5c;
+}
+.footer-section a:hover {
+    color: #007bff;
+    text-decoration: underline;
+    text-shadow: #2c3e50;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+}

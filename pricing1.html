@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Service Pricing</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #0095ff;
+            padding: 1rem;
+            color: white;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: #0095ff;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .breadcrumb {
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: #0095ff;
+            text-decoration: none;
+        }
+
+        /* Service tabs */
+        .service-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .service-tab {
+            padding: 1rem 2rem;
+            background-color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            white-space: nowrap;
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-tab.active {
+            background-color: #1a365d;
+            color: white;
+        }
+
+        /* Service content */
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background-color: #e3f2fd;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-tabs {
+            margin: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .price-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .price-per-lb {
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        .bulk-pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .bulk-price-card {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .savings-tag {
+            background-color: #4caf50;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Order summary */
+        .order-summary {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .schedule-btn {
+            background-color: #0095ff;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: white;
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #666;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+
+            .bulk-pricing {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                ❤️ laundryheap
+            </a>
+            <div class="nav-links">
+                <a href="#">How it works</a>
+                <a href="#">Prices & Services</a>
+                <a href="#">About us</a>
+                <a href="#">For business</a>
+                <a href="#" class="btn">Log in</a>
+                <a href="#" class="btn btn-white">Book now</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="#">Home</a> > Prices & Services
+        </div>
+
+        <div class="service-tabs">
+            <a href="#" class="service-tab active">
+                🧺 Wash
+            </a>
+            <a href="#" class="service-tab">
+                👕 Wash & Iron
+            </a>
+            <a href="#" class="service-tab">
+                🧥 Dry Cleaning
+            </a>
+            <a href="#" class="service-tab">
+                🛏️ Duvets & Bulky Items
+            </a>
+        </div>
+
+        <div class="service-content">
+            <div class="main-content">
+                <div class="pricing-card">
+                    <h2>Wash</h2>
+                    <p>For everyday laundry, bedsheets and towels.</p>
+                </div>
+
+                <div class="pricing-tabs">
+                    <div class="price-item">
+                        <div>
+                            <h3>Mixed wash (per 15 lbs)</h3>
+                            <p>Light and dark clothes washed together at 90°F. You can request 110°F instead.</p>
+                        </div>
+                        <div class="price-info">
+                            <div class="price">$32.85</div>
+                            <div class="price-per-lb">$2.19 /lb</div>
+                        </div>
+                    </div>
+
+                    <div class="bulk-pricing">
+                        <div class="bulk-price-card">
+                            <div class="savings-tag">Save up to 30%</div>
+                            <h4>5 Loads</h4>
+                            <div class="price">$31/item</div>
+                        </div>
+                        <div class="bulk-price-card">
+                            <h4>10 Loads</h4>
+                            <div class="price">$28.50/item</div>
+                        </div>
+                        <div class="bulk-price-card">
+                            <h4>20 Loads</h4>
+                            <div class="price">$27.75/item</div>
+                        </div>
+                    </div>
+
+                    <div class="price-item">
+                        <div>
+                            <h3>Separate wash of light and dark clothes (per 30 lbs)</h3>
+                            <p>We'll separate the items for you and wash at 90°F. Starts with two loads. You can request 110°F instead.</p>
+                        </div>
+                        <div class="price-info">
+                            <div class="price">$65.70</div>
+                            <div class="price-per-lb">$2.19 /lb</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="order-summary">
+                <h3>No services selected</h3>
+                <p>Do I need to list every item? <a href="#">Learn more</a></p>
+                <a href="#" class="schedule-btn">SCHEDULE AN ORDER</a>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#">How it works</a></li>
+                        <li><a href="#">Prices & Services</a></li>
+                        <li><a href="#">Help Centre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Our solutions</h3>
+                    <ul>
+                        <li><a href="#">Laundry</a></li>
+                        <li><a href="#">Dry cleaning</a></li>
+                        <li><a href="#">Dry cleaners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Our company</h3>
+                    <ul>
+                        <li><a href="#">About Laundryheap</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Locations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Work with us</h3>
+                    <ul>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Partner drivers</a></li>
+                        <li><a href="#">Cleaning partners</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

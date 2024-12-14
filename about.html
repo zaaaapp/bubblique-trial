@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Bubblique</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="img/laundry.png">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"> Bubblique</a>
+            <div class="nav-links">
+                <a href="about.html">About us</a>
+                <a href="howitworks.html">How it works</a>
+                <a href="pricing.html">Prices & Services</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            </div>
+        </nav>
+        
+    </header>
+
+    <main>
+        <section class="hero" id="about">
+            <h1>About Bubblique</h1>
+            <p>Fresh Laundry, No Hassle!</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>Welcome to <span>Bubblique</span>, where clean clothes meet convenience!</p> <br>
+                <p>We pride ourselves on providing top-notch laundry and dry-cleaning services tailored to your busy lifestyle. From everyday washing to specialized care for delicate fabrics, our team of experienced professionals ensures your garments are treated with the utmost care and precision.</p>
+            </div>
+            <div class="about-image">
+                <img src="img/about.png" alt="">
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Our Features</h2>
+            <div class="features-grid">
+                <div class="features-item">
+                    <div class="features-number">1</div>
+                    <h3>Convenient Scheduling</h3>
+                    <p>Can effortlessly book laundry services through online scheduling platform.</p>
+                </div>
+                <div class="features-item">
+                    <div class="features-number">2</div>
+                    <h3>Automated Notifications</h3>
+                    <p>The system sends real-time updates on laundry orders to keep customers informed.</p>
+                </div>
+                <div class="features-item">
+                    <div class="features-number">3</div>
+                    <h3>Centralized Data Management</h3>
+                    <p>All customer data is stored in a secure centralized database.</p>
+                </div>
+                <div class="features-item">
+                    <div class="features-number">4</div>
+                    <h3>Delivery or Store Pick-up</h3>
+                    <p>Choose between delivery to your doorstep or picking up your laundry at the store.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="img/kim.jpg" alt="">
+                    <h3>Kry Marie Serfino</h3>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/jen.jpg" alt="">
+                    <h3>Jane Ybañez</h3>
+                    <p>CTO</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/gio.png" alt="">
+                    <h3>Gio Moises Pejo</h3>
+                    <p>COO</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: bubbliquelaundry@gmail.com</p>
+                <p>Phone: +63 994 626 6442</p>
+            </div>
+            <div class="footer-section">
+                <h3>Address</h3>
+                <p>Poblacion, Cordova, Cebu</p>
+            </div>
+            <div class="footer-section">
+                <h3>Menu</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="howitworks.html">How It Works</a>
+                <a href="pricing.html">Prices</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bubblique. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

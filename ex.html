@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhopakhana - Modern Laundry Services</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f5ff;
+            color: #2d3748;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navbar styles */
+        header {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4299e1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .btn {
+            background-color: #4299e1;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3182ce;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #4299e1;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                gap: 1rem;
+                border-radius: 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #2d3748;
+        }
+
+        .hero p {
+            color: #718096;
+            margin-bottom: 2rem;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f9fafb;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer Section */
+        footer {
+            padding: 2rem 0;
+            background: #2d3748;
+            color: #f0f5ff;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-links a {
+            color: #cbd5e0;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">📍 Dhopakhana</div>
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+                <a href="#signin" class="btn">Sign In</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div>
+                <h1>Experience Premium Laundry Services.</h1>
+                <p>We ensure quality laundry care at your convenience.</p>
+                <a href="#schedule" class="btn">Schedule Pickup</a>
+            </div>
+            <img src="img/logo.png" alt="Laundry Illustration">
+        </section>
+
+        <section class="services container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">🧺 Dry Wash</div>
+                <div class="service-card">🌊 Washing</div>
+                <div class="service-card">👔 Ironing</div>
+                <div class="service-card">🧵 Household Items</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <div class="footer-links">
+            <h3>Company</h3>
+            <a href="#about">About Us</a>
+            <a href="#careers">Careers</a>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

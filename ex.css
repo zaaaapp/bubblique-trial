@@ -1,0 +1,243 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background: #f0f5ff;
+}
+
+/* Container */
+.container {
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header styles */
+header {
+    background-color: #ffffff;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4299e1;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4a5568;
+}
+
+.btn {
+    background-color: #4299e1;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #3182ce;
+}
+
+.btn.outline {
+    background-color: transparent;
+    border: 2px solid #4299e1;
+    color: #4299e1;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+.hero-content {
+    margin-left: 40px;
+}
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero-content p {
+    color: #718096;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Services section */
+.services {
+    padding: 4rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 4rem 0;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* App section */
+.app-section {
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.app-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.app-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.app-buttons img {
+    height: 40px;
+}
+
+/* Footer */
+footer {
+    background: white;
+    padding: 4rem 0;
+    margin-top: 4rem;
+    border-radius: 20px 20px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-links h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #718096;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero, .app-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        padding-top: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .app-buttons {
+        justify-content: center;
+    }
+}
